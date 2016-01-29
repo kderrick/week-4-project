@@ -4,18 +4,34 @@ function Pizza(pizzaSize,pizzaToppings) {
 }
 
 Pizza.prototype.sizeCost = function () {
-  var pizzaPrice = 10;
+  var pizzaSizePrice = 0;
   if(this.pizzaSize === "Large" ) {
-     return pizzaPrice += 2;
+     return pizzaSizePrice += 2;
   } else {
-    return pizzaPrice += 0;
+    return pizzaSizePrice += 0;
   }
 }
 
 Pizza.prototype.toppingsCost = function (pizzaToppings) {
   var pizzaPrice = 10;
-  if (pizzaToppings === "[Cheese]" || pizzaToppings === "[Pepperoni]" || pizzaToppings === "[Onions]" || pizzaToppings === "[Olives]" || pizzaToppings === "[Sausage]") {
+  if (pizzaToppings.indexOf("Cheese") > 0 ) {
+    pizzaPrice += 1;
+  }
+  if (pizzaToppings.indexOf("Onions") > 0) {
+    pizzaPrice += 1;
+  }
+  if (pizzaToppings.indexOf("Pepperoni") > 0) {
+    pizzaPrice += 1;
+  }
+  if (pizzaToppings.indexOf("Sausage") > 0) {
+    pizzaPrice += 1;
+  }
+  if (pizzaToppings.indexOf("Olives") > 0) {
     pizzaPrice += 1;
   }
   return pizzaPrice;
+}
+
+Pizza.prototype.totalPizzaCost = function (testPizza) {
+  return "The cost of your pizza will be" + " " + (this.sizeCost() + this.toppingsCost(this.pizzaToppings)) + " dollars.";
 }

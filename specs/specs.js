@@ -4,4 +4,9 @@ describe('Pizza', function () {
     expect(testPizza.pizzaSize).to.be.equal("Large");
     expect(testPizza.pizzaToppings).to.be.eql("[cheese]");
   });
+
+  it("adds the sizeCost method to all Pizzas", function() {
+    var testPizza = new Pizza("Large");
+    expect(testPizza.sizeCost("Large")).to.be.equal(12);
+  });
 });

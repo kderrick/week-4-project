@@ -35,3 +35,19 @@ Pizza.prototype.toppingsCost = function (pizzaToppings) {
 Pizza.prototype.totalPizzaCost = function (testPizza) {
   return "The cost of your pizza will be" + " " + (this.sizeCost() + this.toppingsCost(this.pizzaToppings)) + " dollars.";
 }
+
+// END BUSINESS AND START USER
+
+
+$(document).ready(function() {
+  $('form#new-pizza').submit(function(event) {
+    event.preventDefault();
+
+  var inputtedSize = $('#pizzaSize input:radio:checked').val();
+  var inputtedToppings = $()
+  // var newPizza = new Pizza(inputtedSize, [inputtedToppings]);
+
+
+
+  });
+})

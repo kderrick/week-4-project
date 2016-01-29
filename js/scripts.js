@@ -43,11 +43,23 @@ $(document).ready(function() {
   $('form#new-pizza').submit(function(event) {
     event.preventDefault();
 
-  var inputtedSize = $('#pizzaSize input:radio:checked').val();
-  var inputtedToppings = $()
-  // var newPizza = new Pizza(inputtedSize, [inputtedToppings]);
+  var inputtedSize = $('#pizzaSize input:radio:checked').val(); <!---->
+  var checkedToppings = $('input[name=toppings]:checked');
+  var inputtedToppings = [];
+  $(checkedToppings).each(function() {
+    inputtedToppings.push(checkedToppings.val());
+    });
 
+    var newPizza = new Pizza(inputtedSize, inputtedToppings);
 
+    $("#order").text(newPizza.totalPizzaCost());
 
   });
-})
+
+});
+
+
+
+// $('input:checkbox[name=toppings]:checked').each(function(){
+//   return ($(this).val());
+// });

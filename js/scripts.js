@@ -11,3 +11,11 @@ Pizza.prototype.sizeCost = function () {
     return pizzaPrice += 0;
   }
 }
+
+Pizza.prototype.toppingsCost = function (pizzaToppings) {
+  var pizzaPrice = 10;
+  if (pizzaToppings === "[Cheese]" || pizzaToppings === "[Pepperoni]" || pizzaToppings === "[Onions]" || pizzaToppings === "[Olives]" || pizzaToppings === "[Sausage]") {
+    pizzaPrice += 1;
+  }
+  return pizzaPrice;
+}

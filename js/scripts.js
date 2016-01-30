@@ -11,25 +11,35 @@ Pizza.prototype.sizeCost = function () {
     return pizzaSizePrice += 0;
   }
 }
+// pizzaToppings
+Pizza.prototype.toppingsCost = function () {
+//   var pizzaPrice = 10;
+//   var pizzaToppings = this.pizzaToppings
+//   for (var i = 0; i < pizzaToppings.length; ++i ) {
+//     if (this.pizzaToppings.indexOf(i) > 0) {
+//       pizzaPrice +=1 ;
+//     }
+//   }
+//   return pizzaPrice;
+// };
 
-Pizza.prototype.toppingsCost = function (pizzaToppings) {
-  var pizzaPrice = 10;
-  if (pizzaToppings.indexOf("Cheese") > 0 ) {
-    pizzaPrice += 1;
-  }
-  if (pizzaToppings.indexOf("Onions") > 0) {
-    pizzaPrice += 1;
-  }
-  if (pizzaToppings.indexOf("Pepperoni") > 0) {
-    pizzaPrice += 1;
-  }
-  if (pizzaToppings.indexOf("Sausage") > 0) {
-    pizzaPrice += 1;
-  }
-  if (pizzaToppings.indexOf("Olives") > 0) {
-    pizzaPrice += 1;
-  }
-  return pizzaPrice;
+var pizzaPrice = 10;
+if (this.pizzaToppings.indexOf("Cheese") > 0 ) {
+  pizzaPrice += 1;
+}
+if (this.pizzaToppings.indexOf("Onions") > 0) {
+  pizzaPrice += 1;
+}
+if (this.pizzaToppings.indexOf("Pepperoni") > 0) {
+  pizzaPrice += 1;
+}
+if (this.pizzaToppings.indexOf("Sausage") > 0) {
+  pizzaPrice += 1;
+}
+if (this.pizzaToppings.indexOf("Olives") > 0) {
+  pizzaPrice += 1;
+}
+return pizzaPrice;
 }
 
 Pizza.prototype.totalPizzaCost = function (testPizza) {
@@ -50,7 +60,7 @@ $(document).ready(function() {
     inputtedToppings.push(checkedToppings.val());
     });
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
-    
+
 
     $("#order").text(newPizza.totalPizzaCost());
 

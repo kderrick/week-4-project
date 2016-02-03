@@ -12,7 +12,7 @@ describe('Pizza', function () {
 
   it("adds the toppingsCost method to all Pizzas", function () {
     var testPizza = new Pizza("Large",["Cheese"]);
-    expect(testPizza.toppingsCost(["Cheese"]).to.equal(11));
+    expect(testPizza.toppingsCost(["Cheese"])).to.equal(11);
   });
 
   it("adds the totalPizzaCost method to all Pizzas", function () {
